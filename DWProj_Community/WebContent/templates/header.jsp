@@ -26,7 +26,7 @@ String id = (String) session.getAttribute("idKey");
 				} else {
 			%>	
 					<li class="header_mainLi"><a href="/member/login.jsp">로그인</a></li>
-					<li class="header_mainLi"><a href="/member/member.jsp">회원가입</a></li>
+					<li class="header_mainLi"><a href="/member/joinAgreement.jsp">회원가입</a></li>
 			<%} %>
 					<li class="header_mainLi"><a href="#">마이페이지</a></li>
 				</ul>
