@@ -1,6 +1,13 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
-<jsp:include page="/templates/header.jsp" />
+<%
+	request.setCharacterEncoding("UTF-8");
+	String chkVCode = request.getParameter("vCode");
+	
+	if(!(chkVCode != null && chkVCode.equals("chkOK1234"))) {
+		response.sendRedirect("/member/joinAgreement.jsp");
+	}
+%>
 <!DOCTYPE html>
 <html lang="ko">
 <head>
@@ -11,6 +18,7 @@
 <link rel="stylesheet" href="/style/style_Member.css">
 </head>
 <body>
+<jsp:include page="/templates/header.jsp" />
 	<div id="wrap">
 		<form name="regFrm" method="post" action="memberProc.jsp">
 			<table>

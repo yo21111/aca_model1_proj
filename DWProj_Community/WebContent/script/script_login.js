@@ -15,9 +15,9 @@ $(function() {
 		location.href = "/member/logout.jsp";
 	});
 
-	// 마이페이지로 이동  ***수정필요
+	// 마이페이지로 이동
 	$("button#myPage").click(function() {
-		location.href = "/member/login.jsp";
+		location.href = "/member/myPage.jsp";
 	});
 
 	// 로그인 버튼

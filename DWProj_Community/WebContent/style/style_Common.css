@@ -3,6 +3,7 @@
 
 /* main#main  nav#mainLNB 시작 */
 main#main>div#lnb>nav#mainLNB li {
+	margin-left: 25px;
 	width: 120px;
 	border: 1px solid #000;
 } 

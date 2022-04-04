@@ -21,14 +21,15 @@ String id = (String) session.getAttribute("idKey");
 			<%
 				if(id != null) {
 					%>
+					<li class="header_mainLi"><span id="userId"><%=id %> 님</span></li>
 					<li class="header_mainLi"><a href="/member/logout.jsp">로그아웃</a></li>
+					<li class="header_mainLi"><a href="/member/myPage.jsp">마이페이지</a></li>
 					<%
 				} else {
 			%>	
 					<li class="header_mainLi"><a href="/member/login.jsp">로그인</a></li>
 					<li class="header_mainLi"><a href="/member/joinAgreement.jsp">회원가입</a></li>
 			<%} %>
-					<li class="header_mainLi"><a href="#">마이페이지</a></li>
 				</ul>
 			</div>
 			<!-- div#header_member_container -->
@@ -55,6 +56,5 @@ String id = (String) session.getAttribute("idKey");
 	<!--div#wrap-->
 	<script
 		src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-	<script src="/script/script.js"></script>
 </body>
 </html>

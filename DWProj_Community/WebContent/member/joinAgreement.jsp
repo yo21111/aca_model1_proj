@@ -13,41 +13,46 @@
 <body>
 	<jsp:include page="/templates/header.jsp" />
 	<div id="wrap">
-		<div id="chkAllArea">
-			<label for="chkAll">
-			 	<input type="checkbox" id="chkAll">
-				이용약관 및 개인정보수집 및 이용, 쇼핑정보 수신(선택)에 모두 동의합니다.
-			</label>
-		</div>
 
-		<div id="contents" class="joinAgree">
-
-			<div class="termArea">
-				<h3>[필수] 이용약관 동의</h3>
-				<iframe src="/templates/usingAgree.jsp" class="usingAgree"></iframe>
-				<label> 이용약관에 동의하십니까? <input type="checkbox"
-					class="agreeChk"> 동의함
+		<form id="joinFrm" method="post" action="/member/member.jsp">
+			<div id="chkAllArea">
+				<label for="chkAll"> <input type="checkbox" id="chkAll">
+					이용약관 및 개인정보수집 및 이용, 쇼핑정보 수신(선택)에 모두 동의합니다.
 				</label>
 			</div>
 
-			<div class="termArea">
-				<h3>[필수] 개인정보 수집 및 이용 동의</h3>
-				<iframe src="/templates/personalInfoAgree.jsp"
-					class="personalInfoAgree"></iframe>
-				<label> 이용약관에 동의하십니까? <input type="checkbox"
-					class="agreeChk"> 동의함
-				</label>
-			</div>
+			<div class="joinAgree">
 
-			<div class="termArea">
-				<h3>[선택] 개인정보 수집 및 이용 동의</h3>
-				<iframe src="/templates/shopInfoAgree.jsp" class="shopInfoAgree"></iframe>
-				<label> 이용약관에 동의하십니까? <input type="checkbox"
-					class="agreeChk"> 동의함
-				</label>
-			</div>
+				<div class="termArea">
+					<h3>[필수] 이용약관 동의</h3>
+					<iframe src="/templates/usingAgree.jsp" class="usingAgree"></iframe>
+					<label> 이용약관에 동의하십니까? <input type="checkbox"
+						class="agreeChk chkReq" data-link="0"> 동의함
+					</label>
+				</div>
 
-		</div>
+				<div class="termArea">
+					<h3>[필수] 개인정보 수집 및 이용 동의</h3>
+					<iframe src="/templates/personalInfoAgree.jsp"
+						class="personalInfoAgree"></iframe>
+					<label> 이용약관에 동의하십니까? <input type="checkbox"
+						class="agreeChk chkReq" data-link="1"> 동의함
+					</label>
+				</div>
+
+				<div class="termArea">
+					<h3>[선택] 개인정보 수집 및 이용 동의</h3>
+					<iframe src="/templates/shopInfoAgree.jsp" class="shopInfoAgree"></iframe>
+					<label> 이용약관에 동의하십니까? <input type="checkbox"
+						class="agreeChk" data-link="2"> 동의함
+					</label>
+				</div>
+			</div>
+			<div id="frmArea">
+				<button type="button">회원가입</button>
+			</div>
+			<input type="hidden" name="vCode" value="chkOK1234">
+		</form>
 	</div>
 	<!--div#wrap-->
 	<jsp:include page="/templates/footer.jsp" />

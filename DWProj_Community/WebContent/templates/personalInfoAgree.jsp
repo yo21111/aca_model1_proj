@@ -7,8 +7,7 @@
 <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Document</title>
-    <link rel="stylesheet" href="/style/style_Common.css">
+<title>PIA</title>
 </head>
 <body>
 
@@ -26,7 +25,5 @@
 회사는 개인정보 수집 및 이용목적이 달성된 후에는 예외 없이 해당 정보를 지체 없이 파기합니다.
 	</pre>
 
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-    <script src="/script/script.js"></script>
 </body>
 </html>
