@@ -1,0 +1,78 @@
+@charset "UTF-8";
+@import url(/source/style_Reset.css);
+
+/* -------------------------------header 시작------------------------------- */
+header#header {
+	height: 200px;
+	margin-bottom: 10px;
+}
+
+#header>div#header_member_container>ul {
+	justify-content: flex-end;
+}
+
+#header_member_container>ul#header_GNB_member>li {
+	margin-left: 20px;
+}
+
+#header_member_container>ul#header_GNB_member>li:hover {
+	font-weight: bold;
+	text-decoration: underline;
+}
+
+#header>div#header_title {
+	text-align: center;
+	height: 140px;
+	line-height: 140px;
+}
+
+#header>div#header_title a {
+	width: 100%;
+	height: 100%;
+}
+
+nav#header_GNB {
+	margin-bottom: 5px;
+}
+
+nav#header_GNB>ul#header_GNB_mainMenu {
+	height: 40px;
+	justify-content: center;
+	align-items: center;
+}
+
+#header_GNB_mainMenu>li {
+	font-size: 1.2em;
+	margin: 0 10px;
+	padding: 3px 5px;
+}
+
+#header_GNB_mainMenu>li>a{
+	padding: 3px 5px;
+	width: 100%;
+}
+
+#header_GNB_mainMenu>li:hover {
+	font-weight: bold;
+	background-color: #efefef;
+}
+/* -------------------------------header 끝------------------------------- */
+
+
+/* -------------------------------footer 시작------------------------------- */
+footer#footer {
+	height: 130px;
+	padding-left: 25px;
+	color: 666;
+}
+
+#footer>div#footer_inner {
+	background-color: #efefef;
+	height: 120px;
+}
+
+#footer>div#footer_inner>div {
+	padding: 5px 15px;
+	transform: translateY(13px);
+}
+/* -------------------------------footer 끝------------------------------- */

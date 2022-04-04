@@ -1,0 +1,32 @@
+@charset "UTF-8";
+@import url(/source/style_Reset.css);
+
+td.zipcodeTitleTd {
+	font-weight: bold;
+	font-size: 1.1em;
+	padding-bottom: 15px;
+}
+
+td#zipcodeInput {
+	padding: 10px 0;
+}
+
+#zipcodeInput>input {
+	width: 300px;
+	padding: 3px 0;
+	font-size: 1.1em;
+}
+
+button {
+	padding: 3px 4px;
+	font-size: 1.1em;
+}
+
+td.zipcodeTd {
+	margin-bottom: 3px;
+	border-bottom: 1px solid #eee;
+}
+
+td.zipcodeTd :hover {
+	font-weight: bold;
+}

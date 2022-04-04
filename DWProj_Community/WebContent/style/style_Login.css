@@ -1,0 +1,94 @@
+@charset "UTF-8";
+
+@import url(/source/style_Reset.css);
+
+div#content, div#btns {
+	text-align: center;
+	margin: 30px 0;
+}
+
+table {
+	margin: 0 auto;
+	text-align: center;
+	width: 480px;
+	height: 200px;
+}
+
+table td#title {
+	font-size: 22px;
+	font-weight: bold;
+}
+
+td.subtitle {
+	text-align: right;
+	font-weight: bold;
+	width: 100px;
+}
+
+td#errorMsg {
+	height: 40px;
+	font-weight: bold;
+}
+
+td {
+	text-align: center;
+	height: 50px;
+}
+
+button {
+	padding: 10px 13px;
+	width: 200px;
+	border: none;
+	background-color: #4e87f0;
+	color: #fff;
+	cursor: pointer;
+}
+
+table input {
+	padding: 5px 5px;
+	width: 300px;
+}
+
+div#utill {
+	margin: 0 auto;
+	width: 400px;
+}
+
+div#loginOpt {
+	justify-content: space-between;
+	margin-right: 8px;
+}
+
+#loginOpt span {
+	cursor: pointer;
+	user-select: none;
+}
+
+input[type=checkbox] {
+	transform: translateY(2px);
+	cursor: pointer;
+}
+
+#loginOpt span:last-child {
+	margin-left: 4px;
+}
+
+#loginSecurity span:last-child {
+	color: #08f;
+	font-weight: bold;
+}
+
+ul#findUL {
+	margin: 10px 0;
+	justify-content: center;
+}
+
+#findUL a {
+	font-size: 13px;
+	font-weight: bold;
+	color: #888;
+}
+
+#findUL>li.findLi {
+	margin: 0 4px;
+}
