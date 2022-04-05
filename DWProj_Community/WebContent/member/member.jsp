@@ -31,25 +31,25 @@
 					<td class="td2"><input id="idInput" type="text" name="uId"
 						size="15">
 						<button id="idChk" type="button">ID 중복확인</button></td>
-					<td>아이디를 적어 주세요.</td>
+					<td>5글자 이상, 영어, 숫자 조합</td>
 				</tr>
 				<tr>
 					<td class="td1 important">패스워드</td>
 					<td class="td2"><input id="pwInput" type="password" name="uPw"
 						size="15"></td>
-					<td>패스워드를 적어주세요.</td>
+					<td>2글자 이상</td>
 				</tr>
 				<tr>
 					<td class="td1 important">패스워드 확인</td>
 					<td class="td2"><input id="pwChk" type="password"
 						name="uPwChk" size="15"><span id="pwError"></span></td>
-					<td>패스워드를 확인합니다.</td>
+					<td></td>
 				</tr>
 				<tr>
 					<td class="td1 important">이름</td>
 					<td class="td2"><input id="nameInput" type="text" name="uName"
 						size="15"></td>
-					<td>이름을 적어주세요.</td>
+					<td>&nbsp;</td>
 				</tr>
 				<tr>
 					<td class="td1">성별</td>
@@ -60,22 +60,34 @@
 					<label for="radio2"> 여 
 						<input id="radio2" type="radio" name="gender" value="2">
 					</label></td>
-					<td>성별을 선택하세요.</td>
+					<td></td>
 				</tr>
 				<tr>
 					<td class="td1 important">생년월일</td>
 					<td class="td2"><input id="birthInput" type="text"
 						name="uBirthday" size="6" placeholder="220101"></td>
-					<td>생년월일을 적어주세요.</td>
+					<td>6글자 입력  ex. 220101</td>
 				</tr>
 				<tr>
 					<td class="td1 important">Email</td>
-					<td class="td2"><input id="emailInput" type="text"
-						name="uEmail" size="30" placeholder="test@model1.com"></td>
-					<td>이메일을 적어주세요.</td>
+					<td class="td2">
+						<input id="emailInput1" type="text" size="20">
+						@
+						<input id="emailInput2" type="text" size="20">
+						<select id="emailSelect">
+							<option value="0">- 직접 입력 -</option>
+							<option value="naver.com">naver.com</option>
+							<option value="daum.net">daum.net</option>
+							<option value="google.com">google.com</option>
+							<option value="nate.com">nate.com</option>
+						</select>
+					</td>
+					<td>
+						<input id="emailHidden" type="hidden" name="uEmail">
+					</td>
 				</tr>
 				<tr>
-					<td class="td1 important">우편번호</td>
+					<td class="td1">우편번호</td>
 					<td class="td2"><input id="zCodeInput" type="text"
 						name="uZipcode" size="7" readonly>
 						<button id="zCodeChk" type="button">우편번호찾기</button></td>
@@ -85,7 +97,7 @@
 					<td class="td1">주소</td>
 					<td class="td2"><input id="addrInput" type="text" name="uAddr"
 						size="45"></td>
-					<td>주소를 적어주세요.</td>
+					<td></td>
 				</tr>
 				<tr>
 					<td class="td1">취미</td>
@@ -101,7 +113,7 @@
 						<label for="uHobby5">운동 
 							<input id="uHobby5" type="checkbox" name="uHobby" value="운동"></label>
 					</td>
-					<td>취미를 선택 하세요.</td>
+					<td></td>
 				</tr>
 				<tr>
 					<td class="td1">직업</td>
@@ -122,7 +134,7 @@
 							<option value="기타">기타</option>
 						</select>
 					</td>
-					<td>직업을 선택하세요</td>
+					<td></td>
 				</tr>
 				<tr>
 					<td id="btnTd" colspan="3">

@@ -49,6 +49,11 @@ form>table td.td2 {
 	width: 560px;
 }
 
+form>table td:last-child {
+	font-size: 14px;
+	color: #888;
+}
+
 span#pwError {
 	font-size: 0.8em;
 	text-align: center;
@@ -61,16 +66,16 @@ form>table td.td2 input#idInput, input#nameInput, input#birthInput,
 	width: 230px;
 }
 
-input#pwInput, input#pwChk {
+input#pwInput, input#pwChk, input#emailInput {
 	padding: 3px 5px;
 	height: 35px;
 	width: 230px;
 }
 
-input#emailInput {
+input#emailInput1, input#emailInput2, select#emailSelect {
 	padding: 3px 5px;
 	height: 35px;
-	width: 350px;
+	width: 150px;
 }
 
 input#addrInput {
@@ -119,4 +124,74 @@ td#btnTd {
 
 td#btnTd>button {
 	width: 100px;
+}
+
+/*------------------myPage.jsp css 적용------------------ */
+
+div#myPage_LNB {
+	margin: 0 25px;
+}
+
+#myPage_LNB li.myPageLi {
+	padding: 10px 3px;
+	margin-bottom: 10px;
+	background-color: #efefef;
+}
+
+#myPage_LNB li.myPageLi:hover {
+	font-weight: bold;
+}
+
+div.myPage_tbl table {
+	margin-left: 30px;
+	width: 750px;
+	border-collapse: collapse;
+}
+
+div.myPage_tbl td#title {
+	font-size: 18px;
+	font-weight: bold;
+}
+
+div.myPage_tbl td.td1 {
+	width: 150px;
+}
+
+div.myPage_tbl tr {
+	height: 50px;
+	border-bottom: 1px solid #ccc;
+}
+
+div.myPage_tbl td {
+	padding: 0 25px;
+}
+table#withdrawTbl tr{
+	height: 70px;
+}
+
+table#withdrawTbl td {
+	border-bottom: none;
+}
+
+div.myPage_tbl td.td_bold {
+	font-weight: bold;
+	font-size: 17px;
+}
+
+div.myPage_tbl td#td_red {
+	font-weight: bold;
+	font-size: 17px;
+	color: #ff0000;
+}
+
+td#withdrawBtnTd {
+	height: 100px;
+	text-align: center;
+}
+
+td#withdrawBtnTd button {
+	width: 100px;
+	font-size: 20px;
+	padding: 10px 15px;
+	height: 45px;
 }

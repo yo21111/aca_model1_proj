@@ -108,7 +108,8 @@ public class MemberDAO {
 			}
 			pstmt.setString(9, new String(hb));
 			pstmt.setString(10, bean.getuJob());
-			if (pstmt.executeUpdate() == 1) flag = true;
+			if (pstmt.executeUpdate() == 1)
+				flag = true;
 		} catch (Exception e) {
 			e.printStackTrace();
 		} finally {
@@ -135,6 +136,88 @@ public class MemberDAO {
 			e.printStackTrace();
 		} finally {
 			pool.freeConnection(conn, pstmt, rs);
+		}
+
+		return flag;
+	}
+
+	// 회원정보 가져오기 메서드
+	public Member selectMember(String uId) {
+		Member member = new Member();
+
+		try {
+			conn = pool.getConnection();
+			sql = "select * from member where uId = ?";
+			pstmt = conn.prepareStatement(sql);
+			pstmt.setString(1, uId);
+			rs = pstmt.executeQuery();
+
+			if (rs.next()) {
+				member.setuId(rs.getString("uId"));
+				member.setuPw(rs.getString("uPw"));
+				member.setuName(rs.getString("uName"));
+				member.setGender(rs.getString("gender"));
+				member.setuEmail(rs.getString("uEmail"));
+				member.setuBirthday(rs.getString("uBirthday"));
+				member.setuZipcode(rs.getString("uZipcode"));
+				member.setuAddr(rs.getString("uAddr"));
+				String hobby = (rs.getString("uHobby"));
+				String[] uHobby = hobby.split("");
+				member.setuHobby(uHobby);
+				member.setuJob(rs.getString("uJob"));
+			}
+
+		} catch (Exception e) {
+			e.printStackTrace();
+		} finally {
+			pool.freeConnection(conn, pstmt);
+		}
+
+		return member;
+	}
+
+	// 회원 정보 변경 메서드
+	public boolean updateMember(Member bean, String id) {
+		boolean flag = false;
+
+		try {
+			conn = pool.getConnection();
+			sql = "Update member set uPw=?, uEmail=?, uZipcode=?, uAddr=?, uJob=? where uId=?";
+			pstmt = conn.prepareStatement(sql);
+
+			pstmt.setString(1, bean.getuPw());
+			pstmt.setString(2, bean.getuEmail());
+			pstmt.setString(3, bean.getuZipcode());
+			pstmt.setString(4, bean.getuAddr());
+			pstmt.setString(5, bean.getuJob());
+			pstmt.setString(6, id);
+			if (pstmt.executeUpdate() == 1)
+				flag = true;
+		} catch (Exception e) {
+			e.printStackTrace();
+		} finally {
+			pool.freeConnection(conn, pstmt);
+		}
+
+		return flag;
+	}
+	
+	// 회원 탈퇴 메서드
+	public boolean deleteMember(String id) {
+		boolean flag = false;
+
+		try {
+			conn = pool.getConnection();
+			sql = "delete from member where uId=?";
+			pstmt = conn.prepareStatement(sql);
+
+			pstmt.setString(1, id);
+			if (pstmt.executeUpdate() == 1)
+				flag = true;
+		} catch (Exception e) {
+			e.printStackTrace();
+		} finally {
+			pool.freeConnection(conn, pstmt);
 		}
 
 		return flag;
