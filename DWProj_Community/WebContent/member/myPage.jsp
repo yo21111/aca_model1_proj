@@ -103,8 +103,7 @@ Member member = mDao.selectMember(id);
 				<%
 				} else if (pageInfo.equals("updateInfo")) {
 				%>
-				<form id="regFrm" action="/member/myPageProc.jsp" method="post">
-
+				<form name="regFrm" id="regFrm" action="/member/myPageProc.jsp" method="post">
 					<div class="myPage_tbl">
 						<table>
 							<tbody>

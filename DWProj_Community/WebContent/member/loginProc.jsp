@@ -5,7 +5,10 @@
 request.setCharacterEncoding("UTF-8");
 String id = request.getParameter("id");
 String pass = request.getParameter("pass");
-String url = "/member/login.jsp";
+
+String goUrl = request.getParameter("goUrl");
+String url = goUrl==null ? "/member/login.jsp" : goUrl;
+
 String msg = "아이디 또는 비밀번호를 확인해주세요.";
 
 boolean result = dao.loginMember(id, pass);

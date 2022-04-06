@@ -47,7 +47,7 @@ if (check.equals("n")) {
 					<td class="zipcodeTitleTd"><br>검색된 결과가 없습니다.</td>
 				</tr>
 				<%
-			} else {
+				} else {
 				for (int i = 0; i < vlist.size(); i++) {
 					ZipcodeBean bean = vlist.get(i);
 					String rZipcode = bean.getZipcode();

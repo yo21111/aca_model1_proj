@@ -7,6 +7,8 @@
 <%
 request.setCharacterEncoding("UTF-8");
 String id = (String) session.getAttribute("idKey");
+
+String url = request.getParameter("url") == null ? "/member/login.jsp" : request.getParameter("url");
 %>
 <meta charset="UTF-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -77,6 +79,7 @@ String id = (String) session.getAttribute("idKey");
 					</ul>
 				</div>
 			</div>
+			<input type="hidden" name="goUrl" value="<%=url %>">
 		</form>
 
 		<%
