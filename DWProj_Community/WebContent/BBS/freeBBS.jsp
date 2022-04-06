@@ -17,7 +17,14 @@ String pageSize = request.getParameter("pageOffset") == null ? "10" : request.ge
 
 PageHandler ph = new PageHandler(totalPage, Integer.parseInt(pageNo), Integer.parseInt(pageSize));
 
-List<BoardBBS> bList = bbsDao.selectFreeBBSList(Integer.parseInt(pageNo), Integer.parseInt(pageSize));
+List<BoardBBS> bList = null;
+if (request.getParameter("search") == null) {
+	bList = bbsDao.selectFreeBBSList(Integer.parseInt(pageNo), Integer.parseInt(pageSize), "");
+} else {
+	pageSize = request.getParameter("pageSize");
+	String sql = request.getParameter("sql");
+	bList = bbsDao.selectFreeBBSList(Integer.parseInt(pageNo), Integer.parseInt(pageSize), sql);
+}
 %>
 <!DOCTYPE html>
 <html lang="ko">
@@ -32,7 +39,7 @@ List<BoardBBS> bList = bbsDao.selectFreeBBSList(Integer.parseInt(pageNo), Intege
 	<jsp:include page="/templates/header.jsp" />
 	<div id="wrap">
 
-		<form>
+		<form action="/BBS/freeBBSproc.jsp" id="bbsFrm">
 			<div id="bbs_header">
 				<div id="header_title">
 					<h2>자유게시판</h2>
@@ -86,7 +93,7 @@ List<BoardBBS> bList = bbsDao.selectFreeBBSList(Integer.parseInt(pageNo), Intege
 							<tr>
 								<td><%=bbs.getBno() %></td>
 								<td>
-									<a class="td_title" href="/BBS/board.jsp?bno=<%=bbs.getBno() %>&pageNo=<%=pageNo %>&pageSize=<%=pageSize %>">
+									<a class="td_title" href="/BBS/board.jsp?bno=<%=bbs.getBno() %>&pageNo=<%=pageNo %>&pageSize=<%=pageSize %>&write=n">
 										<%=bbs.getTitle() %>
 									</a>
 								</td>
@@ -151,6 +158,6 @@ List<BoardBBS> bList = bbsDao.selectFreeBBSList(Integer.parseInt(pageNo), Intege
 	<jsp:include page="/templates/footer.jsp" />
 	<script
 		src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-	<script src="/script/script.js"></script>
+	<script src="/script/script_bbs.js"></script>
 </body>
 </html>
