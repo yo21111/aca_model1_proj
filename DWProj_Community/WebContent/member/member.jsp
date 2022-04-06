@@ -31,7 +31,7 @@
 					<td class="td2"><input id="idInput" type="text" name="uId"
 						size="15">
 						<button id="idChk" type="button">ID 중복확인</button></td>
-					<td>5글자 이상, 영어, 숫자 조합</td>
+					<td>영어 대소문자, 숫자 조합</td>
 				</tr>
 				<tr>
 					<td class="td1 important">패스워드</td>

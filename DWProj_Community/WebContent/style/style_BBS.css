@@ -1,3 +1,145 @@
 @charset "UTF-8";
+
 @import url(/source/style_Reset.css);
 
+/*----------------------------freeBBS 시작----------------------------------*/
+form {
+	padding-left: 25px;
+}
+
+#bbs_header div#header_title {
+	padding: 20px 0;
+}
+
+#bbs_header div#header_subtitle {
+	justify-content: space-between;
+	font-size: 18px;
+	padding: 5px 10px;
+	border-bottom: 3px solid #777;
+}
+
+#bbs_header div#header_subtitle div#subtitle_info {
+	transform: translateY(7px);
+}
+
+#bbs_header div#header_subtitle select#pageOffset {
+	font-size: 18px;
+	padding: 6px;
+}
+
+#bbs_header div#header_subtitle button#writeBtn {
+	cursor: pointer;
+	padding: 3px 5px;
+	font-size: 18px;
+	height: 35px;
+	font-weight: bold;
+	color: #fff;
+	background-color: #0000a0;
+	border-radius: 2px;
+	border: none;
+	transform: translateY(-1px);
+}
+
+div#bbs_main table {
+	margin: 0 auto;
+	width: 930px;
+	text-align: center;
+	border-collapse: collapse;
+}
+
+#bbs_main table thead tr {
+	height: 50px;
+	border-bottom: 1px solid #bbb;
+}
+
+#bbs_main table thead th:nth-child(1) {
+	width: 500px;
+}
+
+#bbs_main table thead th:nth-child(2) {
+	width: 150px;
+}
+
+#bbs_main table thead th:nth-child(3) {
+	width: 200px;
+}
+
+#bbs_main table tbody td {
+	height: 50px;
+}
+
+#bbs_main table tbody td a.td_title {
+	padding: 5px 20px;
+}
+
+#bbs_main table tbody td a.td_title:hover {
+	font-weight: bold;
+	text-decoration: underline;
+}
+
+#bbs_main table tbody tr:last-child {
+	border-bottom: 2px solid #777;
+}
+
+#bbs_main table tbody td:nth-child(1) {
+	width: 30px;
+}
+
+#bbs_main table tbody td:nth-child(2) {
+	width: 270px;
+}
+
+#bbs_main table tbody td:nth-child(3) {
+	width: 180px;
+}
+
+#bbs_main table tbody td:nth-child(4) {
+	width: 150px;
+}
+
+div#bbs_nav div#nav_navbar {
+	padding: 12px 0;
+	text-align: center;
+	font-weight: bold;
+	font-size: 17px;
+}
+
+div#bbs_nav div#nav_navbar a {
+	padding: 2px 6px;
+}
+
+div#bbs_nav div#nav_navbar a:hover {
+	background-color: #eee;
+}
+
+div#bbs_nav div#nav_search {
+	padding: 10px 10px;
+	justify-content: flex-end;
+	align-items: center;
+}
+
+div#bbs_nav div#nav_search select#searchOpt {
+	font-size: 14px;
+	padding: 8px;
+}
+
+div#bbs_nav div#nav_search input#searchInput {
+	width: 300px;
+	font-size: 14px;
+	padding: 7px;
+	margin: 0 7px;
+	font-size: 14px;
+}
+
+div#bbs_nav div#nav_search button#searchBtn {
+	cursor: pointer;
+	padding: 2px 15px;
+	font-size: 16px;
+	height: 35px;
+	font-weight: bold;
+	color: #fff;
+	background-color: #0000a0;
+	border-radius: 2px;
+	border: none;
+}
+/*----------------------------freeBBS 끝 ----------------------------------*/

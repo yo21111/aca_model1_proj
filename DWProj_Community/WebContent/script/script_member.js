@@ -49,12 +49,12 @@ $(function() {
 		$("form#regFrm").submit();
 
 	});
-	
+
 	// 회원 탈퇴 버튼
-	
-	$("button#deleteBtn").click(function(){
-		if($("input#withdrawChk").is(":checked") == true) {
-			location.href="/member/withdrawProc.jsp";
+
+	$("button#deleteBtn").click(function() {
+		if ($("input#withdrawChk").is(":checked") == true) {
+			location.href = "/member/withdrawProc.jsp";
 		} else {
 			alert("동의 여부를 확인해주세요.");
 		}
@@ -64,10 +64,20 @@ $(function() {
 
 
 	//---------------member.jsp 스크립트 시작---------------
-	
+
 	//id check 함수
 	$("button#idChk").click(function() {
 		let idInput = $("input#idInput").val();
+		$("input#idInput").val(idInput);
+
+		let regExp = /[^a-z|A-Z|0-9]/g;
+		let rExpRes = regExp.test(idInput);
+
+		if (rExpRes) {
+			alert("아이디는 영어 대/소문자와 숫자만 가능합니다.");
+			return;
+		}
+
 		if (idInput == "") {
 			alert("아이디를 입력해주세요.");
 			$("input#idInput").focus();
@@ -75,28 +85,41 @@ $(function() {
 			let idInput = $("input#idInput").val().trim();
 			let url = "/member/idCheck.jsp?id=" + idInput;
 			let nickName = "IDCheck";
-			
-						
+
+
 			let w = screen.width;
 			let popWidth = 300;
-			let leftPos = (w - popWidth)/2;
-			
+			let leftPos = (w - popWidth) / 2;
+
 			let h = screen.height;
 			let popHeight = 150;
-			let topPos = (h - popHeight)/2;
-			
-			let prop = "width="+popWidth+", height="+popHeight + ", left="+leftPos+", top="+topPos;
+			let topPos = (h - popHeight) /  2;
+
+			let prop = "width=" +  popWidth + ", height="  + popHeight + ", left=" + leftPos + ", top="  + topPos;
 			window.open(url, nickName, prop);
 
 		}
 	});
 
 
+	//pw Input 함수
+	$("input#pwInput").keyup(function() {
+		let pwInput = $("input#pwInput").val()
+		let regExp = /[^a-z|A-Z|0-9]/g;
+		let rExpRes = regExp.test(pwInput);
+
+		if (rExpRes) {
+			alert("비밀번호는 영어 대/소문자와 숫자만 가능합니다.");
+			return;
+		}
+	});
+
 	//pw check함수
 	$("input#pwChk").keyup(function() {
-		let pwInput = $("input#pwInput").val();
-		let pwChk = $("input#pwChk").val();
-		let pwError1 = $("span#pwError1").text();
+		let pwInput = $("input#pwInput").val().trim();
+		$("input#pwInput").val(pwInput);
+		let pwChk = $("input#pwChk").val().trim();
+		$("input#pwChk").val(pwChk);
 
 		if (pwInput == pwChk) {
 			$("span#pwError").css("color", "green");
@@ -191,8 +214,8 @@ $(function() {
 		$("input#idInput").focus();
 	});
 
-	
-	
+
+
 	//---------------member.jsp 스크립트 끝---------------
 
 
