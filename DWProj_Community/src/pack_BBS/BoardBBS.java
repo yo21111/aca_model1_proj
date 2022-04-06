@@ -1,6 +1,6 @@
 package pack_BBS;
 
-public class bbsBoard {
+public class BoardBBS {
 	private int bno;
 	private String category;
 	private String writer;
