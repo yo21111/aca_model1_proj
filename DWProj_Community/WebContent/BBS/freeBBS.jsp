@@ -12,10 +12,13 @@ if (id == null) {
 }
 
 int totalPage = bbsDao.freeBBScount();
-String pageNo = request.getParameter("pageNo") == null ? "1" : request.getParameter("pageNo");
-String pageSize = request.getParameter("pageOffset") == null ? "10" : request.getParameter("pageOffset");
+String pageNo = request.getParameter("pageNo") == null || request.getParameter("pageNo") == "" ? "1" : request.getParameter("pageNo");
+String pageSize = request.getParameter("pageOffset") == null || request.getParameter("pageOffset") == "" ? "10" : request.getParameter("pageOffset");
 
-PageHandler ph = new PageHandler(totalPage, Integer.parseInt(pageNo), Integer.parseInt(pageSize));
+int pNo = Integer.parseInt(pageNo);
+int pSize = Integer.parseInt(pageSize);
+
+PageHandler ph = new PageHandler(totalPage, pNo, pSize);
 
 List<BoardBBS> bList = null;
 if (request.getParameter("search") == null) {
@@ -112,6 +115,7 @@ if (request.getParameter("search") == null) {
 			<!-- div#bbs_main -->
 
 			<div id="bbs_nav">
+				<div><input type="hidden" id="hideInput" value="<%=pageNo %>"></div>
 				<div id="nav_navbar">
 					<%
 					if (ph.isShowPrev()) {
@@ -124,7 +128,7 @@ if (request.getParameter("search") == null) {
 					}
 					for (int i = ph.getBeginPage(); i <= ph.getEndPage(); i++) {
 					%>
-					<a href="/BBS/freeBBS.jsp?pageNo=<%=i%>&pageSize=<%=pageSize%>"><%=i%></a>
+					<a id="pageNo<%=i%>" href="/BBS/freeBBS.jsp?pageNo=<%=i%>&pageSize=<%=pageSize%>"><%=i%></a>
 					<%
 					}
 					if (ph.isShowNext()) {

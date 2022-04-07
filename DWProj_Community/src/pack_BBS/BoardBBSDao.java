@@ -8,7 +8,6 @@ import java.util.ArrayList;
 import java.util.List;
 
 import pack_DBCP.DBConnectionMgr;
-import pack_Member.ZipcodeBean;
 
 public class BoardBBSDao {
 	private Connection conn = null;
@@ -113,5 +112,90 @@ public class BoardBBSDao {
 		}
 
 		return bList;
+	}
+	
+	public boolean insertPage(String id, String title, String content) {
+		boolean flag = false;
+
+		try {
+			conn = pool.getConnection();
+			sql = "insert into bbsboard (category, writer, title, content, write_date, up_date) values(?,?,?,?,now(),now())";
+			pstmt = conn.prepareStatement(sql);
+			
+			
+			pstmt.setString(1, "freeBBS");
+			pstmt.setString(2, id);
+			pstmt.setString(3, title);
+			pstmt.setString(4, content);
+			
+			if (pstmt.executeUpdate() == 1)
+				flag = true;
+		} catch (Exception e) {
+			e.printStackTrace();
+		} finally {
+			pool.freeConnection(conn, pstmt);
+		}
+
+		return flag;
+	}
+	
+	public void increaseViewCnt(int view_cnt, int bno) {
+		try {
+			conn = pool.getConnection();
+			sql = "UPDATE bbsboard SET   view_cnt = view_cnt + 1 WHERE bno = ?";
+			pstmt = conn.prepareStatement(sql);
+			
+			
+			pstmt.setInt(1, bno);
+			
+			pstmt.executeUpdate();
+		} catch (Exception e) {
+			e.printStackTrace();
+		} finally {
+			pool.freeConnection(conn, pstmt);
+		}
+	}
+	
+	public boolean deletePage(int bno) {
+		boolean flag = false;
+
+		try {
+			conn = pool.getConnection();
+			sql = "delete from bbsboard where bno=?";
+			pstmt = conn.prepareStatement(sql);
+
+			pstmt.setInt(1, bno);
+			if (pstmt.executeUpdate() == 1)
+				flag = true;
+		} catch (Exception e) {
+			e.printStackTrace();
+		} finally {
+			pool.freeConnection(conn, pstmt);
+		}
+
+		return flag;
+	}
+	
+	public boolean updatePage(int bno, String title, String content) {
+		boolean flag = false;
+		
+		try {
+			conn = pool.getConnection();
+			sql = "UPDATE bbsboard SET   title = ?, content = ?, up_date = now()  WHERE bno = ?";
+			pstmt = conn.prepareStatement(sql);
+			
+			pstmt.setString(1, title);
+			pstmt.setString(2, content);
+			pstmt.setInt(3, bno);
+			
+			if (pstmt.executeUpdate() == 1)
+				flag = true;
+		} catch (Exception e) {
+			e.printStackTrace();
+		} finally {
+			pool.freeConnection(conn, pstmt);
+		}
+		
+		return flag;
 	}
 }

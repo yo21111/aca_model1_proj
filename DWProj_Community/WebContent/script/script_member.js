@@ -116,9 +116,9 @@ $(function() {
 
 	//pw check함수
 	$("input#pwChk").keyup(function() {
-		let pwInput = $("input#pwInput").val().trim();
+		let pwInput = $("input#pwInput").val();
 		$("input#pwInput").val(pwInput);
-		let pwChk = $("input#pwChk").val().trim();
+		let pwChk = $("input#pwChk").val();
 		$("input#pwChk").val(pwChk);
 
 		if (pwInput == pwChk) {

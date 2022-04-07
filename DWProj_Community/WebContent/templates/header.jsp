@@ -43,7 +43,7 @@ String id = (String) session.getAttribute("idKey");
 				<ul id="header_GNB_mainMenu" class="dFlex">
 					<li class="header_GNB_mainLi"><a href="/index.jsp">메인페이지로</a></li>
 					<li class="header_GNB_mainLi"><a href="#">공지 게시판</a></li>
-					<li class="header_GNB_mainLi"><a href="/BBS/freeBBS.jsp">자유 게시판</a></li>
+					<li class="header_GNB_mainLi"><a href="/BBS/freeBBS.jsp?pageNo=1">자유 게시판</a></li>
 					<li class="header_GNB_mainLi"><a href="#">이미지 게시판</a></li>
 					<li class="header_GNB_mainLi"><a href="#">FAQ</a></li>
 					<li class="header_GNB_mainLi"><a href="#">Q&A</a></li>

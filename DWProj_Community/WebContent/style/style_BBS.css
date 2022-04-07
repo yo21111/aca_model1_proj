@@ -143,3 +143,99 @@ div#bbs_nav div#nav_search button#searchBtn {
 	border: none;
 }
 /*----------------------------freeBBS 끝 ----------------------------------*/
+
+/*----------------------------board 시작----------------------------------*/
+form#boardFrm {
+	margin-left: 25px;
+}
+
+form#boardFrm table {
+	margin: 0 auto;
+	width: 800px;
+	border-collapse: collapse;
+}
+
+form#boardFrm table input {
+	height: 60px;
+	padding: 0 15px;
+	font-weight: bold;
+	outline: none;
+}
+
+
+form#boardFrm table input#titleInput {
+	font-size: 28px;
+	width: 800px;
+	padding-left: 10px;
+	border: none;
+}
+
+
+form#boardFrm table input.subInput {
+	height: 40px; 
+	border : none;
+	color: #aaa;
+	border: none;
+}
+
+form#boardFrm table td#page_bno input {
+	width: 60px;	
+}
+
+form#boardFrm table td#page_category input {
+	width: 100%;
+	text-align: right;
+}
+
+form#boardFrm table tr#utilTr {
+	border-bottom: 3px solid #777;
+}
+
+form#boardFrm table tr#utilTr td#page_writer input{
+	width: 300px;
+}
+
+form#boardFrm table tr#utilTr td#page_write_date input{
+	text-align: right;
+	width: 400px;
+	padding-right: 0;
+}
+
+form#boardFrm table tr#utilTr td:nth-child(3) input{
+	width: 100px;
+	text-align: right;
+}
+
+form#boardFrm table td#contentTd {
+	padding: 20px 0;
+	text-align: center;
+}
+
+form#boardFrm table td#contentTd textarea#content {
+	width: 770px;
+	height: 400px;
+	resize: none;
+	border: 2px solid #aaa;
+	padding: 10px;
+	outline: none;
+}
+
+form#boardFrm td#btnTd {
+	border-top: 2px solid #777;
+	height: 70px;
+	text-align: right;
+}
+
+form#boardFrm button {
+	cursor: pointer;
+	padding: 2px 15px;
+	font-size: 16px;
+	height: 35px;
+	font-weight: bold;
+	color: #fff;
+	background-color: #0000a0;
+	border-radius: 2px;
+	border: none;
+}
+
+/*----------------------------board 끝----------------------------------*/

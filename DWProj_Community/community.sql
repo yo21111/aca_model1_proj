@@ -50,5 +50,6 @@ DEFAULT CHARACTER SET = utf8;
 insert into  bbsboard (category, writer, title, content, write_date, up_date, view_cnt, comment_cnt)values
 ("freeBBS", "asdf", "title3", "content", now(), now(), 0, 0);
 
+select bno, category, writer, title, content, write_date, up_date, view_cnt, comment_cnt from bbsboard order by bno desc limit 10;
 select * from bbsboard where category='freeBBS' and content like '%cn%' limit 0, 10;
 select title, writer, write_date, view_cnt from bbsboard where category='freeBBS';
